@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YE3-vr-YJs">
-                                <rect key="frame" x="16" y="20" width="343" height="96.5"/>
+                                <rect key="frame" x="16" y="20" width="343" height="58.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1f-KU-FK5">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -38,22 +38,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yf-QA-v9n">
-                                        <rect key="frame" x="0.0" y="66.5" width="148" height="30"/>
-                                        <state key="normal" title="Set Default Label text">
-                                            <color key="titleShadowColor" red="0.31241534949545857" green="0.57055327731725458" blue="0.76569444444444446" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRf-jD-haA"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="oSl-Qk-LwB" secondAttribute="trailing" id="s6q-Ka-hiP"/>
                                 </constraints>
                             </stackView>
                             <imageView verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="320" verticalCompressionResistancePriority="320" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="svg-eM-RYU">
-                                <rect key="frame" x="16" y="124.5" width="320" height="320"/>
+                                <rect key="frame" x="16" y="86.5" width="343" height="343"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="svg-eM-RYU" secondAttribute="height" multiplier="1:1" id="4r8-nt-TLk"/>
@@ -62,14 +53,19 @@
                                     <outletCollection property="gestureRecognizers" destination="E2N-kW-DPg" appends="YES" id="HBq-i8-0r3"/>
                                 </connections>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1IO-ZQ-FVM" customClass="RatingControl" customModule="SPA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="482" width="225" height="37"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AeS-gi-TOf"/>
-                            <constraint firstItem="YE3-vr-YJs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="G69-KD-aT2"/>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T6G-SE-UUT"/>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cuO-z8-L71"/>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="leading" secondItem="svg-eM-RYU" secondAttribute="leading" id="f9X-lw-9KM"/>
+                            <constraint firstItem="1IO-ZQ-FVM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gWX-0Y-N0H"/>
+                            <constraint firstItem="1IO-ZQ-FVM" firstAttribute="top" secondItem="svg-eM-RYU" secondAttribute="bottom" constant="29.5" id="jP7-0B-lM2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="svg-eM-RYU" secondAttribute="trailing" id="lij-Hp-Ngr"/>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pW9-6f-xyV"/>
                             <constraint firstItem="svg-eM-RYU" firstAttribute="top" secondItem="YE3-vr-YJs" secondAttribute="bottom" constant="8" symbolic="YES" id="rIq-RU-2R2"/>
                             <constraint firstItem="YE3-vr-YJs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="v7Z-oi-REw"/>
@@ -79,6 +75,7 @@
                         <outlet property="mealNameLabel" destination="q1f-KU-FK5" id="X5m-Uj-Pq6"/>
                         <outlet property="nameTextField" destination="oSl-Qk-LwB" id="mMQ-aK-Xfd"/>
                         <outlet property="photoImageView" destination="svg-eM-RYU" id="G1W-OZ-mS5"/>
+                        <outlet property="ratingControl" destination="1IO-ZQ-FVM" id="Lup-B2-eQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
